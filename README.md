@@ -26,8 +26,8 @@ Or, run `npm run cy:open` to open Cypress App on a desktop viewport.
 
 ### Mobile
 
-Run 'npm run test:mobile' to run the test in headless mode on a mobile viewport.
+Run `npm run test:mobile` to run the test in headless mode on a mobile viewport.
 
-Or, run 'npm run cy:mobile' to open the Cypress App on a mobile viewport.
+Or, run `npm run cy:mobile` to open the Cypress App on a mobile viewport.
 
 #### End

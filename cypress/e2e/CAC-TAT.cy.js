@@ -353,6 +353,24 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     })
   })
 
+  it('exibe e ocultaas mensagens de sucesso e erro usando .invoke()', () => {
+    cy.get('span[class="success"]')
+      .should('not.be.visible')
+      .invoke('show')
+      .should('be.visible')
+      .and('have.value', 'Mensagem enviada com sucesso')
+      .invoke('hide')
+      .should('not.be.visible')
+
+    cy.get('span[class="error"]')
+      .should('not.be.visible')
+      .invoke('show')
+      .should('be.visible')
+      .and('have.value', 'Valide os campos obrigatórios')
+      .invoke('hide')
+      .should('not.be.visible')
+
+  })
 
 })
 

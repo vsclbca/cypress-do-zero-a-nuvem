@@ -64,6 +64,8 @@ describe('Central de Atendimento ao Cliente TAT', () => {
 
   it('exibe uma mensagem de erro ao submeter um formulário com um email em formatação inválida', () => {
 
+    cy.clock()
+
     cy.get('input[name="firstName"]')
       .as('firstName')
       .should('be.visible')
@@ -95,6 +97,10 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('span[class="error"]')
       .should('be.visible')
 
+    cy.tick(3000)
+
+    cy.get('span[class="error"]')
+    .should('not.be.visible')
 
   })
 
@@ -111,6 +117,8 @@ describe('Central de Atendimento ao Cliente TAT', () => {
 
   it('exibe uma mensagem de erro quando o telefone se torna obrigatório mas não é preenchido antes do envio do formulário', () => {
 
+    cy.clock()
+    
     cy.get('input[name="firstName"]')
       .as('firstName')
       .should('be.visible')
@@ -146,9 +154,16 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('span[class="error"]')
       .should('be.visible')
 
+    cy.tick(3000)
+
+    cy.get('span[class="error"]')
+    .should('not.be.visible')
+
   })
 
   it('preenche e limpa os campos nome, sobrenome, email e telefone', () => {
+
+    cy.clock()
 
     cy.get('input[name="firstName"]')
       .as('firstName')
@@ -197,10 +212,17 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('span[class="error"]')
       .should('be.visible')
 
+    cy.tick(3000)
+
+    cy.get('span[class="error"]')
+      .should('not.be.visible')
+
   })
 
   it('exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios.', () => {
 
+    cy.clock()
+    
     cy.get('button[type="submit"]')
       .should('be.visible')
       .click()
@@ -208,13 +230,23 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('span[class="error"]')
       .should('be.visible')
 
+    cy.tick(3000)
+
+    cy.get('span[class="error"]')
+      .should('not.be.visible')
+
   })
 
   it('envia o formulário com sucesso usando um comando customizado', () => {
 
+    cy.clock()
+    
     cy.fillMandatoryFieldsAndSubmit(user)
     cy.get('span[class="success"]')
       .should('be.visible')
+    cy.tick(3000)
+    cy.get('span[class="success"]')
+      .should('not.be.visible')
 
   })
 

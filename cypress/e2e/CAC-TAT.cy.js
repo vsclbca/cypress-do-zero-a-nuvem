@@ -358,7 +358,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       .should('not.be.visible')
       .invoke('show')
       .should('be.visible')
-      .and('have.value', 'Mensagem enviada com sucesso')
+      .and('contain', 'Mensagem enviada com sucesso')
       .invoke('hide')
       .should('not.be.visible')
 
@@ -366,7 +366,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       .should('not.be.visible')
       .invoke('show')
       .should('be.visible')
-      .and('have.value', 'Valide os campos obrigatórios')
+      .and('contain', 'Valide os campos obrigatórios')
       .invoke('hide')
       .should('not.be.visible')
 

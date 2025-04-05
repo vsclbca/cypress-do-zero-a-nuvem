@@ -22,6 +22,8 @@ describe('Central de Atendimento ao Cliente TAT', () => {
   })
   it('preenche os campos obrigatórios e envia o formulário', () => {
 
+    cy.clock()
+    
     cy.get('input[name="firstName"]')
       .as('firstName')
       .should('be.visible')
@@ -52,6 +54,11 @@ describe('Central de Atendimento ao Cliente TAT', () => {
 
     cy.get('span[class="success"]')
       .should('be.visible')
+
+    cy.tick(3000)
+      
+    cy.get('span[class="success"]')
+    .should('not.be.visible')  
 
   })
 

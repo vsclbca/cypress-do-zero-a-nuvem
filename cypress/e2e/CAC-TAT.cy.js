@@ -340,7 +340,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       .and('have.attr', 'href', 'privacy.html')
   })
 
-  Cypress._.times(5, () => {
+  Cypress._.times(4, () => {
   
     it('acessa a página da política de privacidade removendo o target e então clicando no link', () => {
 

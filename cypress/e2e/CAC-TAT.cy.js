@@ -388,7 +388,8 @@ describe('Central de Atendimento ao Cliente TAT', () => {
 
         expect(response.status).to.equal(200);
         expect(response.statusText).to.equal('OK')
-        expect(response.body).to.contain('CAC TAT')
+        cy.get('h1[id="title"]')
+          .contains('CAC TAT')
 
       })
 
